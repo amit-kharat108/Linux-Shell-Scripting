@@ -57,6 +57,15 @@ do
        ;;
   esac
 done
+
+# Remove the option parameters and keep the remaining arguments
+
+shift "$(( OPTIND - 1 ))"
+
+if [[ "${#}" -gt 0 ]]
+then
+    usage
+fi
        
 # Generate the password with special char if user asks for it
 log "Generating the password"
