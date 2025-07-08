@@ -24,7 +24,7 @@ usage(){
 # Define the log function for verbosity
 
 log(){
-      MESSAGE="${@}"
+      local MESSAGE="${@}"
       if [[ "${VERBOSE}" = "true" ]]
       then
 	  echo "${MESSAGE}"
@@ -54,6 +54,7 @@ do
        ;;
      ?)
        usage
+       ;;
   esac
 done
        
@@ -72,4 +73,5 @@ fi
 log "Done"
 
 #Display the password
-log "Your password: ${PASSWORD}"
+echo "Your password: ${PASSWORD}"
+exit 0
